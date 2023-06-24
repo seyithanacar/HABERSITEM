@@ -1,0 +1,40 @@
+﻿@using HABERSİTEM.Models.Sınıflar
+@model List<SifreTalep>
+@{
+    ViewBag.Title = "SifreTalepListele";
+    Layout = "~/Views/Yönetici_Layout.cshtml";
+}
+
+
+<h2 class="form" style="color:coral">Şifre Talep Tablosu</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>İD</th>
+        <th>MAİL</th>
+        <th>AD-SOYAD</th>
+        <th>ŞİFRE</th>
+        <th>ŞİFRE TEKRARI</th>
+        <th>SİL</th>
+        <th>ONAYLA</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.Kullaniciid_t</th>
+            <th>@x.Kullanicimail_t</th>
+            <th>@x.Kullaniciadi_t_t " "@x.Kullanicisoyadi_t</th>
+            <th>@x.Kullanicisifre_t</th>
+            <th>@x.Kullanicisifretekrarı_t</th>
+
+            <th><a href="/Yönetici/SifreTalepSil/@x.Kullaniciid_t" class="btn btn-danger">SİL</a></th>
+            <th><a href="/Yönetici/SifreTalepOnayla/@x.Kullaniciid_t" class="btn btn-success">ONAYLA</a></th>
+        </tr>
+    }
+
+
+</table>
+
+

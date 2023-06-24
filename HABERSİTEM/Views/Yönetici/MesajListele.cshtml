@@ -1,0 +1,36 @@
+﻿@using HABERSİTEM.Models.Sınıflar
+@model List<Mesaj>
+@{
+    ViewBag.Title = "MesajListele";
+    Layout = "~/Views/Yönetici_Layout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th scope="row" style="color:coral">MESAJ TABLOSU</th>
+    </tr>
+    <tr>
+        <th>İD</th>
+        <th>AD-SOYAD</th>
+        <th>MAİL</th>
+        <th>MESAJ BAŞLIK</th>
+        <th>MESAJ İÇERİĞİ</th>
+        <th>MESAJ SİL</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.Mesajid</th>
+            <th>@x.Kullanici.Kullaniciadi " "@x.Kullanici.Kullanicisoyadi</th>
+            <th>@x.Kullanici.Kullanicimail</th>
+            <th>@x.Mesajbaşlık</th>
+            <th>@x.Mesajiçerik</th>
+
+            <th ><a href="/Yönetici/MesajSil/@x.Mesajid" class="btn btn-danger">SİL</a></th>
+        </tr>
+    }
+
+
+</table>

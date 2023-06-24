@@ -1,0 +1,42 @@
+﻿@using HABERSİTEM.Models.Sınıflar
+@model List<Haber>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Yönetici_Layout.cshtml";
+}
+
+
+<h2 class="form" style="color:coral">Haber Tablosu</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+
+        <th>İD</th>
+        <th>BAŞLIK</th>
+        <th>KATEGORI</th>
+        <th>TARİH</th>
+        <th>RESİM</th>
+        <th>YÖNETİCİ</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.Haberid</th>
+            <th>@x.Haberbaslik</th>
+            <th>@x.Kategori.Kategoriadi</th>
+            <th>@x.Habertarih</th>
+            <th>@x.Resim.Resimadi</th>
+            <th>@x.Yönetici.Yöneticiadi @x.Yönetici.Yöneticisoyadi  </th>
+
+            <th><a href="/Yönetici/HaberSil/@x.Haberid" class="btn btn-danger">SİL</a></th>
+            <th><a href="/Yönetici/HaberGüncelle/@x.Haberid" class="btn btn-success">GÜNCELLE</a></th>
+        </tr>
+    }
+
+
+</table>
+
+

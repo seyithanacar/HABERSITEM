@@ -1,0 +1,36 @@
+﻿@model HABERSİTEM.Models.Sınıflar.Haber
+@{
+    ViewBag.Title = "HaberGüncelle";
+    Layout = "~/Views/Yönetici_Layout.cshtml";
+}
+
+
+
+<form class="form-group" method="post" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.Haberid)
+    <h2 class="form" style="color:coral">Haber Ekle</h2>
+    <br />
+    HABER BAŞLIK
+    @Html.TextBoxFor(x => x.Haberbaslik, new { @class = "form-control" })
+    <br />
+
+    HABER KATEGORİ
+    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    <br />
+
+
+    HABER DETAY
+    @Html.TextAreaFor(x => x.Habermetin, 15, 1, new { @class = "form-control" })
+    <br />
+
+    HABER RESİM
+    <input type="file" name="Haberresim" class="form-control" value="@ViewBag.resim" />
+    <br />
+
+
+
+    <button class="btn btn-success">KAYDET</button>
+
+</form>
+
+    

@@ -1,0 +1,18 @@
+﻿@model HABERSİTEM.Models.Sınıflar.Kategori
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Yönetici_Layout.cshtml";
+}
+
+<h2 class="form-control"  style="color:coral">Kategori Ekle</h2>
+<form class="form-group" method="post">
+    <br />
+
+    KATEGORİ ADI
+    @Html.TextBoxFor(x => x.Kategoriadi, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">EKLE</button>
+
+</form>
+

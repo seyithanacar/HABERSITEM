@@ -1,0 +1,27 @@
+﻿@using HABERSİTEM.Models.Sınıflar
+@model List<Kategori>
+@{
+    ViewBag.Title = "KategoriListele";
+    Layout = "~/Views/Yönetici_Layout.cshtml";
+}
+
+<h2 class="form" style="color:coral">Kategori Tablosu</h2>
+<table class="table table-bordered">
+
+    <tr>
+        <th>İD</th>
+        <th>BAŞLIK</th>
+        <th> Sil</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.Kategoriid</th>
+            <th>@x.Kategoriadi</th>
+            <th><a href="/Yönetici/KategoriSil/@x.Kategoriid" class="btn btn-danger">SİL</a></th>
+        </tr>
+    }
+
+
+</table>
+

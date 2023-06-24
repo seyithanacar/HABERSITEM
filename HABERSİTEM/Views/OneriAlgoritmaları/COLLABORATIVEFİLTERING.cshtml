@@ -1,0 +1,42 @@
+﻿@using HABERSİTEM.Models.Sınıflar
+@model List<Haber>
+@{
+    ViewBag.Title = "COLLABORATIVEFİLTERING";
+    Layout = "~/Views/Kullanici_Layout.cshtml";
+}
+
+
+<div class="container-fluid " style="height:10px"></div>
+
+<h2 class="text-success col-lg-10 col-md-10 col-sm-11 col-xs-11">İŞ BİRLİKÇİ ALGORİTMA</h2>
+
+<br />
+@foreach (var x in Model)
+{
+    <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 " style="margin-top:10px">
+        <a href="\Haber\Detay\@x.Haberid" style="text-decoration: none;">
+            <div class="row card">
+                <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6">
+
+                    <img class="responsive-image" src="@x.Haberresim"  alt="Haber Resmi">
+
+                </div>
+                <div class="card-body col-lg-8 col-md-7 col-sm-6 col-xs-6" style="">
+                    
+                    <h5 class="card-title text-success">@x.Haberbaslik</h5>
+                    <div style="height: 8rem">
+                        
+                        <p class="card-text limited-text">@Html.Raw(HttpUtility.HtmlDecode(x.Habermetin.Length > 200 ? x.Habermetin.Substring(0, 200) + "..." : x.Habermetin))</p>
+                        
+                        <div class="row card-footer" style="width:100%; height:2rem;">
+
+                            <small class="text-muted col-lg-8">Kategori:@x.Kategori.Kategoriadi</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <br />
+    </div>
+
+}

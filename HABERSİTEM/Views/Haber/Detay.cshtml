@@ -1,0 +1,39 @@
+﻿@using HABERSİTEM.Models.Sınıflar
+@model List<Haber>
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Kullanici_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-9 col-md-9 col-sm-11 col-xs-11">
+            @foreach (var x in Model)
+            {
+                <div class="form-group col-lg-11 col-md-11 col-sm-11 col-xs-11" stylr="margin-top:2%">
+                    <h2 class="fw-bolder">@x.Haberbaslik</h2>
+                </div>
+
+                <div class="form-group col-lg-6 col-md-6 col-sm-8 col-xs-8">
+                    <img class="" style="width: 100%; margin-top:4%;" src=@x.Haberresim alt="...">
+                </div>
+
+                <div class="form-group" style=" margin-top:2%;">
+                    
+                    <h3 class="fw-bolder col-lg-11 col-md-11 col-sm-11 col-xs-11">@x.Haberbaslik</h3>
+                </div>
+
+                <div class="form-group col-lg-11 col-md-11 col-sm-11 col-xs-11" margin-top:2%;"">
+                    <p class="lh-lg">@x.Habermetin</p>
+                </div>
+
+
+            }
+        </div>
+
+        
+
+    </div>
+</div>
+

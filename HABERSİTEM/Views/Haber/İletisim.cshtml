@@ -1,0 +1,49 @@
+﻿@model HABERSİTEM.Models.Sınıflar.Mesaj
+@{
+    ViewBag.Title = "Iletisim";
+    Layout = "~/Views/Kullanici_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-11">
+
+
+            <form class="form-group" method="post" enctype="multipart/form-data">
+               
+                <div class="container active" style="text-decoration-color:red">
+                    
+                    <h4>MAİL ADRESİNİZ</h4>
+                    @Html.TextBoxFor(x => x.Kullanici.Kullanicimail, new { @class = "form-control" })
+                    <br />
+                </div> 
+                    
+                <div class="container active" style="text-decoration-color:red">
+                    <h4>MESAJ BAŞLIĞINIZ</h4>
+                    
+                    @Html.TextBoxFor(x => x.Mesajbaşlık, new { @class = "form-control" })
+                    <br />
+                </div>
+                <div class="container active" style="text-decoration-color:red">
+                    <br />
+                    <h4>MESAJINIZ</h4>
+                    
+                    @Html.TextAreaFor(x => x.Mesajiçerik, 12, 1, new { @class = "form-control" })
+                    
+
+                    <button class="btn btn-success">GÖNDER</button>
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
