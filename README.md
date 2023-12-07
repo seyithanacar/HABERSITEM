@@ -1,4 +1,4 @@
-#ÖNERİ ALGORİTMALARI İLE HABER SİTESİ
+# ÖNERİ ALGORİTMALARI İLE HABER SİTESİ
 ## Projenin Amacı
 ### Projede öneri algoritmaları kullanılarak kullanıcıların haber okuma alışkanlıklarına göre haber öneren bir haber sitesi geliştirilmesi hedeflenmiştir.
 ### Projede İçerik Tabanlı Öneri Algoritması ve İşbirlikçi Öneri Algoritması algoritmaları kullanılmıştır.
